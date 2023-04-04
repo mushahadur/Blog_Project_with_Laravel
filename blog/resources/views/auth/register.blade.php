@@ -51,22 +51,42 @@
         <form class="form pt" method="POST" action="{{ route('register') }}">
             @csrf
             <div class="input_field">
-                <input type="text" placeholder="Name" name="name" class="input" id="name" onkeyup="validateName()">
+                <input type="text" placeholder="Name" name="name" class="input" id="" value="{{old('name')}}" onkeyup="validateName()">
+                @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
                 <i class="fas fa-user"></i>
                 <samp id="name-error"></samp>
             </div>
             <div class="input_field">
-                <input type="text" placeholder="Email" name="email" class="input" id="email" onkeyup="validateEmail()">
-                <i class="fas fa-envelope"></i>
-                <samp id="email-error"></samp>
+                <input type="text" placeholder="Phone" name="phone" value="{{old('phone')}}"  class="input" >
+                @error('phone')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+                <i class="fas fa-phone"></i>
+                <span id="email-error"></span>
             </div>
             <div class="input_field">
-                <input type="password" placeholder="Password" name="password" class="input" id="password" onkeyup="validatePass()" >
+                <input type="text" placeholder="Email" name="email" value="{{old('email')}}"  class="input" id="" onkeyup="validateEmail()">
+                @error('email')
+                    <span>{{$message}}</span>
+                @enderror
+                <i class="fas fa-envelope"></i>
+                {{-- <samp id="email-error"></samp> --}}
+            </div>
+            <div class="input_field">
+                <input type="password" placeholder="Password" name="password" value="{{old('password')}}"  class="input" id="" onkeyup="validatePass()" >
+                @error('password')
+                    <span>{{$message}}</span>
+                @enderror
                 <i class="fas fa-lock"></i>
                 <samp id="Pass-error"></samp>
             </div>
             <div class="input_field">
-                <input type="password" placeholder="Confm Password" name="password_confirmation" class="input" id="conPassword" onkeyup="validateConPass()">
+                <input type="password" placeholder="Confm Password" name="password_confirmation" value="{{old('password_confirmation')}}"  class="input" id="" onkeyup="validateConPass()">
+                @error('password_confirmation')
+                    <span>{{$message}}</span>
+                @enderror
                 <i class="fas fa-lock"></i>
                 <samp  id="conPass-error"></samp>
             </div>

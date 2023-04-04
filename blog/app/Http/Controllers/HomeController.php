@@ -11,15 +11,15 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     function blogIndex(){
-        $post = PostModel::with('comments')->orderBy('id', 'desc')->take(2)->get();
-        return view('BlogPost',compact('post') );
+        $post = PostModel::with('comments')->orderBy('id', 'desc')->take(4)->get();
+        return view('website.pages.blog_page',compact('post') );
     }
 
     function imageIndex(){
         $image = ImageModel::with('comments')->get();
-        
 
-        return view('BlogImage',compact('image'));
+
+        return view('website.pages.image_page',compact('image'));
      }
 
     function createBlogComment(Request $request, $id){

@@ -40,7 +40,7 @@
                             <div class="avatar-md profile-user-wid mb-4">
                                 <img src="{{asset('/')}}admin/assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
                             </div>
-                            <h5 class="font-size-15 text-truncate">Mushahedur</h5>
+                            <h5 class="font-size-15 text-truncate">{{Auth::user()->name}}</h5>
                             <p class="text-muted mb-0 text-truncate">PHP Developer</p>
                         </div>
 

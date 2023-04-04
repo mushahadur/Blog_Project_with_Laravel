@@ -1,6 +1,37 @@
 @extends('admin.master')
 
 @section('body')
+
+
+
+        {{--        Header and Navbar Start--}}
+
+        <header>
+            <section class="py-2 shadow" style="background-color: rgba(198,227,215,0.6);">
+                <div class="container">
+                    <div class="row text-secondary ">
+                        <div class="col-md-6">
+                            <ul class="nav">
+                                <li class=" border-end pe-3 border-white">
+                                    {{--                                    <a href=""><img  src="{{asset('/')}}assets/img/logo.png" alt="logo" style="height:50px;"> </a>--}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="nav float-end" >
+                                <li class="nav-item py-2">
+                                    <button type="button" class="btn btn-success end"  data-mdb-toggle="modal" data-mdb-target="#addCourseModal">
+                                        Add a New Courses
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        {{--        Header and Navbar End--}}
+
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="card">

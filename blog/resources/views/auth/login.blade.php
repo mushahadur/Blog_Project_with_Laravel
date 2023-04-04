@@ -33,8 +33,8 @@
             @csrf
             <div class="input_field">
                 <input type="text" placeholder="Email" class="input" name="email" id="email" onkeyup="validateEmail()">
-                @error('eamil')
-                <span class="text-danger" >{{$message}}</span>
+                @error('email')
+                    <span class="text-danger" >{{$message}}</span>
                 @enderror
                 <i class="fas fa-envelope"></i>
                 <samp id="email-error"></samp>
@@ -42,7 +42,7 @@
             <div class="input_field">
                 <input type="password" placeholder="Password" class="input" name="password" id="password" onkeyup="validatePass()" >
                 @error('password')
-                <span class="text-danger" >{{$message}}</span>
+                    <span class="text-danger" >{{$message}}</span>
                 @enderror
                 <i class="fas fa-lock"></i>
                 <samp id="Pass-error"></samp>
