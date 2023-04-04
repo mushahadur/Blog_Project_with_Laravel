@@ -16,8 +16,7 @@ class HomeController extends Controller
     }
 
     function imageIndex(){
-        $image = ImageModel::with('comments')->get();
-
+        $image = ImageModel::with('comments')->orderBy('id', 'desc')->take(6)->get();
 
         return view('website.pages.image_page',compact('image'));
      }

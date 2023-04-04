@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
+use App\Models\User;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
+use App\Http\Requests\ProfileUpdateRequest;
 
 class ProfileController extends Controller
 {
@@ -33,17 +34,35 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(ProfileUpdateRequest $request)
     {
+
+        $user = User::where('id', Auth::user()->id)->first();
+
         $request->user()->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        //dd($request->user()->fill($request->validated()));
+        //dd(!empty($request->image));
+
+        if (!empty($request->image)) {
+            $destinationPath= 'uploads/';
+            $image      = $request->file('image');
+            $fileName   = time() . '.' . $image->getClientOriginalExtension();
+            $image->move($destinationPath,$fileName);
+            $user->image = $fileName;
         }
 
-        $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        $user->name = $request->name;
+        $user->city = $request->city;
+        $user->country = $request->country;
+        $user->phone = $request->phone;
+
+        $user->update();
+
+       // $request->user()->save();
+
+        return Redirect::route('profile.edit')->with('statusProfile', 'profile-updated');
     }
 
     /**
