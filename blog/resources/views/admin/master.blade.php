@@ -26,6 +26,8 @@
     <link href="{{asset('/')}}admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{asset('/')}}admin/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- toastr Css Link-->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" />
 
 </head>
 
@@ -282,7 +284,7 @@
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="{{asset('/')}}admin/assets/images/users/Official.jpg"
+                        <img class="rounded-circle header-profile-user" src="{{asset('/')}}uploads/{{Auth::user()->image}}"
                              alt="Header Avatar">
                         <span class="d-none d-xl-inline-block ml-1">{{Auth::user()->name}}</span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
@@ -584,6 +586,13 @@
 
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
+
+<!-- Toastr script CDN -->
+<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+<!-- Toastr Scripts render -->
+{!! Notify::message() !!}
+
 </body>
 
 

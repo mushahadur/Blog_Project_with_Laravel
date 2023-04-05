@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1be91842b9a904506a80dc1f9f8df0f3",
+    "content-hash": "b1eb96545cc0b0b15f475bb5817e6e3f",
     "packages": [
         {
             "name": "brick/math",
@@ -2277,6 +2277,67 @@
                 }
             ],
             "time": "2023-02-25T19:38:58+00:00"
+        },
+        {
+            "name": "plusemon/notify",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/plusemon/notify.git",
+                "reference": "7b16286a486bc973f9f0cc47308c8569f42c7fc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/plusemon/notify/zipball/7b16286a486bc973f9f0cc47308c8569f42c7fc4",
+                "reference": "7b16286a486bc973f9f0cc47308c8569f42c7fc4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": ">=5.2.7",
+                "illuminate/support": ">=5.2.7",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Plusemon\\Notify\\NotifyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Notify": "Plusemon\\Notify\\Facades\\Notify"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "Plusemon\\Notify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emon Khan",
+                    "email": "bdemon00@gmail.com"
+                }
+            ],
+            "description": "Flexible Toastr Notifcation Package for PHP Laravel",
+            "homepage": "https://github.com/plusemon/notify",
+            "keywords": [
+                "laravel",
+                "notification",
+                "toastr"
+            ],
+            "support": {
+                "issues": "https://github.com/plusemon/notify/issues",
+                "source": "https://github.com/plusemon/notify/tree/1.0.6"
+            },
+            "time": "2022-06-09T10:04:05+00:00"
         },
         {
             "name": "psr/container",

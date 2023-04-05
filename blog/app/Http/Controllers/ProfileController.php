@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Plusemon\Notify\Facades\Notify;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
@@ -61,8 +62,8 @@ class ProfileController extends Controller
         $user->update();
 
        // $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('statusProfile', 'profile-updated');
+       Notify::success('Profile Upadate Successfully !', 'Success', ['options']);
+        return Redirect::route('profile.edit');
     }
 
     /**

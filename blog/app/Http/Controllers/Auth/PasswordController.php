@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use Plusemon\Notify\Facades\Notify;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
@@ -28,7 +29,7 @@ class PasswordController extends Controller
         $request->user()->update([
             'password' => Hash::make($request->validated()['password']),
         ]);
-
-        return back()->with('status', 'password-updated');
+        Notify::success('Password Upadate Successfully !', 'Success', ['options']);
+        return back();
     }
 }
