@@ -31,7 +31,6 @@ Route::post('/add-image-comment/{id}', [HomeController::class, 'createImageComme
 Route::get('/dashboard', function () {
     return view('admin.home.index');
 
-
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
