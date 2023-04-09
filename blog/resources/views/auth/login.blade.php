@@ -48,7 +48,7 @@
                 <samp id="Pass-error"></samp>
             </div>
             <div class="forget">
-                <a href="#">Forgot your password?</a>
+                <a href="{{ route('password.request') }}">Forgot your password?</a>
             </div>
             <div class="">
                 <!-- <a href="#" onclick="return validation()">Login</a> -->

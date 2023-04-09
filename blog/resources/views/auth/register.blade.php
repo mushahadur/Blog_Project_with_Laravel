@@ -25,74 +25,74 @@
     </style>
 </head>
 <body>
-<div class="Section">
+    <div class="Section">
 
-    <div class="wrapper">
-        <h4 class="text-center ">
-            <?php echo isset($message) ? $message : '';  ?>
-        </h4>
+        <div class="wrapper">
+            <h4 class="text-center ">
+                <?php echo isset($message) ? $message : '';  ?>
+            </h4>
 
-        <div class="title">
-            SignUp Here
+            <div class="title">
+                SignUp Here
+            </div>
+
+            <div class="social_media">
+                <div class="item">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="item">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="item">
+                    <i class="fab fa-google-plus-g"></i>
+                </div>
+            </div>
+
+            <form class="form pt" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="input_field">
+                    <input type="text" placeholder="    Enter Your Name" name="name" class="input" id="" value="{{old('name')}}" onkeyup="validateName()">
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                    <i class="fas fa-user"></i>
+                    <samp id="name-error"></samp>
+                </div>
+
+                <div class="input_field">
+                    <input type="text" placeholder="    Enter Your Email" name="email" value="{{old('email')}}"  class="input" id="" onkeyup="validateEmail()">
+                    @error('email')
+                        <span>{{$message}}</span>
+                    @enderror
+                    <i class="fas fa-envelope"></i>
+
+                </div>
+                <div class="input_field">
+                    <input type="password" placeholder="    Enter Your Password" name="password" value="{{old('password')}}"  class="input" id="" onkeyup="validatePass()" >
+                    @error('password')
+                        <span>{{$message}}</span>
+                    @enderror
+                    <i class="fas fa-lock"></i>
+                    <samp id="Pass-error"></samp>
+                </div>
+                <div class="input_field">
+                    <input type="password" placeholder="    Enter Your Confm Password" name="password_confirmation" value="{{old('password_confirmation')}}"  class="input" id="" onkeyup="validateConPass()">
+                    @error('password_confirmation')
+                        <span>{{$message}}</span>
+                    @enderror
+                    <i class="fas fa-lock"></i>
+                    <samp  id="conPass-error"></samp>
+                </div>
+
+
+                <div class="border-0">
+                <button type="submit" class="btn" name="signBtn" >SignUp</button>
+                </div>
+                <div class="back"><a  href="index.php">Go To Home</a></div>
+            </form>
+
         </div>
-
-        <div class="social_media">
-            <div class="item">
-                <i class="fab fa-facebook-f"></i>
-            </div>
-            <div class="item">
-                <i class="fab fa-twitter"></i>
-            </div>
-            <div class="item">
-                <i class="fab fa-google-plus-g"></i>
-            </div>
-        </div>
-
-        <form class="form pt" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-            @csrf
-            <div class="input_field">
-                <input type="text" placeholder="    Enter Your Name" name="name" class="input" id="" value="{{old('name')}}" onkeyup="validateName()">
-                @error('name')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-                <i class="fas fa-user"></i>
-                <samp id="name-error"></samp>
-            </div>
-
-            <div class="input_field">
-                <input type="text" placeholder="    Enter Your Email" name="email" value="{{old('email')}}"  class="input" id="" onkeyup="validateEmail()">
-                @error('email')
-                    <span>{{$message}}</span>
-                @enderror
-                <i class="fas fa-envelope"></i>
-
-            </div>
-            <div class="input_field">
-                <input type="password" placeholder="    Enter Your Password" name="password" value="{{old('password')}}"  class="input" id="" onkeyup="validatePass()" >
-                @error('password')
-                    <span>{{$message}}</span>
-                @enderror
-                <i class="fas fa-lock"></i>
-                <samp id="Pass-error"></samp>
-            </div>
-            <div class="input_field">
-                <input type="password" placeholder="    Enter Your Confm Password" name="password_confirmation" value="{{old('password_confirmation')}}"  class="input" id="" onkeyup="validateConPass()">
-                @error('password_confirmation')
-                    <span>{{$message}}</span>
-                @enderror
-                <i class="fas fa-lock"></i>
-                <samp  id="conPass-error"></samp>
-            </div>
-
-
-            <div class="border-0">
-            <button type="submit" class="btn" name="signBtn" >SignUp</button>
-            </div>
-            <div class="back"><a  href="index.php">Go To Home</a></div>
-        </form>
-
     </div>
-</div>
 
 <script src="{{asset('/')}}admin-auth-assets/js/scripts.js"></script>
 </body>
