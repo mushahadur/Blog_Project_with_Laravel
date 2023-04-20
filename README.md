@@ -52,3 +52,16 @@
 <!-- ![profile](./images/me.jpg) -->
 <img  align="center"  src="images/poly-relationship-laravel.png" width="800" title="Drow SQL"/>
 <br/>
+
+
+## This is the comment table Schema: 
+
+```
+Schema::create('comments', function (Blueprint $table) {
+    $table->increments('id');
+    $table->morphs('commentable');
+    $table->text('comment')->nullable();
+    $table->timestamps();
+});
+
+```
