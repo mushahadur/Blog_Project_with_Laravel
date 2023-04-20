@@ -49,13 +49,16 @@
 
 
 ## Many-to-many-poly-relationship-laravel
+
+<br/>
+
 <!-- ![profile](./images/me.jpg) -->
 <img  align="center"  src="images/poly-relationship-laravel.png" width="800" title="Drow SQL"/>
 <br/>
 
 
 
-## This is the comment table Schema: 
+### This is the comment table Schema: 
 
 ```
 Schema::create('comments', function (Blueprint $table) {
@@ -69,7 +72,7 @@ Schema::create('comments', function (Blueprint $table) {
 
 <br>
 
-## This is Image Model comment Function
+### This is Image Model comment Function
 
 ```
 public function comments()
@@ -82,7 +85,7 @@ public function comments()
 
 <br>
 
-## This is Post Model comment Function
+### This is Post Model comment Function
 
 ```
 public function comments()
@@ -97,7 +100,7 @@ public function comments()
 
 <br>
 
-## How to get All post with comment By HomeController 
+### How to get All post with comment By HomeController 
 
 ```
 function blogIndex(){
@@ -110,7 +113,7 @@ function blogIndex(){
 
 <br>
 
-## How to get All Image with comment By HomeController 
+### How to get All Image with comment By HomeController 
 
 ```
 function imageIndex(){
@@ -121,4 +124,4 @@ function imageIndex(){
      }
 ```
 
-### Link: https://blog.logrocket.com/polymorphic-relationships-laravel/ 
+#### Link: https://blog.logrocket.com/polymorphic-relationships-laravel/ 
