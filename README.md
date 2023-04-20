@@ -1,7 +1,6 @@
 <!--markdown tutorial-->
 
-
-# Mushahedur Rahman Khan
+<h1  align="center">Mushahedur Rahman Khan</j1>
 
  <br/>
  
