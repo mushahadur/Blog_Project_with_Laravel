@@ -50,5 +50,5 @@
 
 ### Many-to-many-poly-relationship-laravel
 <!-- ![profile](./images/me.jpg) -->
-<img  align="center"  src="images/many-to-many-poly-relationship-laravel" width="800" title="Drow SQL"/>
+<img  align="center"  src="images/poly-relationship-laravel.png" width="800" title="Drow SQL"/>
 <br/>
