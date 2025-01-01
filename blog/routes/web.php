@@ -24,10 +24,6 @@ Route::get('/image-page', [HomeController::class, 'imageIndex'])->name('HomeImag
 Route::post('/add-blog-comment/{id}', [HomeController::class, 'createBlogComment'])->name('addblogComment');
 Route::post('/add-image-comment/{id}', [HomeController::class, 'createImageComment'])->name('addImageComment');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/dashboard', function () {
     return view('admin.home.index');
 
